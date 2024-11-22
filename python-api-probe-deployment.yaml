@@ -1,0 +1,23 @@
+apiVersion: apps/v1  # Specifies the API version to use for the Deployment resource
+kind: Deployment    # The kind of resource being created
+metadata:           # Metadata about the deployment
+  name: python-api-probe      # Name of the Deployment
+  labels:           # Key-value pairs for identifying and grouping resources
+    app: python-api-probe
+
+spec:               # Specification of the desired behavior of the Deployment
+  replicas: 1       # Number of desired Pods
+  selector:         # Specifies how to identify the Pods managed by this Deployment
+    matchLabels:    # Must match the labels defined in the Pod template
+      app: python-api-probe
+  template:         # Defines the Pod template
+    metadata:       # Metadata for the Pods
+      labels:       # Labels applied to the Pods
+        app: python-api-probe
+    spec:           # Specification for the containers in the Pod
+      containers:   # List of containers to run in the Pods
+      - name: python-api-probe-container # Name of the container
+        image: ghcr.io/mallsjr/python-api-probe:1.0.0      # Docker image for the container
+        ports:                # Ports to expose from the container
+        - containerPort: 5000   # Port the container listens on
+        resources:            # Resource requests and limits for the container
