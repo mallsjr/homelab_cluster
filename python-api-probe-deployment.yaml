@@ -21,3 +21,5 @@ spec:               # Specification of the desired behavior of the Deployment
         ports:                # Ports to expose from the container
         - containerPort: 5000   # Port the container listens on
         resources:            # Resource requests and limits for the container
+      imagePullSecrets:
+      - name: ghcr-secret
