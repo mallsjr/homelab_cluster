@@ -4,7 +4,7 @@
    name: python-api-probe-ingress
  spec:
    rules:
-   - host: python-api-probe.local  # Replace with your desired internal domain
+   - host: myapp.local  # Replace with your desired internal domain
      http:
        paths:
        - path: /
