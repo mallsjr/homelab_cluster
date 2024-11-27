@@ -1,0 +1,16 @@
+ apiVersion: networking.k8s.io/v1
+ kind: Ingress
+ metadata:
+   name: python-api-probe-ingress
+ spec:
+   rules:
+   - host: python-api-probe.local  # Replace with your desired internal domain
+     http:
+       paths:
+       - path: /
+         pathType: Prefix
+         backend:
+           service:
+             name: python-api-probe-service
+             port:
+               number: 80
