@@ -9,8 +9,9 @@
    - host: python-api-probe.local  # Replace with your desired internal domain
      http:
        paths:
-       - backend:
-          service:
-            name: python-api-probe-service
-            port:
-              number: 8080
+         pathType: Prefix
+         backend:
+           service:
+             name: python-api-probe-service
+             port:
+               number: 8080
