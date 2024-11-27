@@ -2,6 +2,8 @@
  kind: Ingress
  metadata:
    name: python-api-probe-ingress
+   annotations:
+     traefik.ingress.kubernetes.io/router.entrypoints: web
  spec:
    rules:
    - host: python-api-probe.local  # Replace with your desired internal domain
