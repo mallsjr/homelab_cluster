@@ -13,4 +13,4 @@
            service:
              name: python-api-probe-service
              port:
-               number: 80
+               number: 8080
